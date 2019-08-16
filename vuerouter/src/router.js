@@ -23,11 +23,11 @@ export default new Router({
         {
             path:'/params/:newsId(\\d+)/:newsTitle',
             component:Params,
-            beforeEnter:(to,from,next)=>{
-                console.log(to);
-                console.log(from);
-                next({path:'/'});
-            }
+            // beforeEnter:(to,from,next)=>{
+            //     console.log(to);
+            //     console.log(from);
+            //     next({path:'/'});
+            // }
         },
         {
             path:'/goHome',
@@ -40,23 +40,31 @@ export default new Router({
         {
             path:'/hi1',
             component:Hi1,
-            alias:'/jspang'
+            alias:'/lj'
+        },
+        {
+            path: '/Hi',
+            components: {
+                // default:Hello,
+                left:Hi2,
+                right:Hi1
+            }
         },
         {
             path:'*',
             component:Error
         },
         {
-            path: '/Hi',
+            path: '/hi',
             component: Hi,
             children:[
+                // {
+                //     path:'/',
+                //     name:'Hello/Hi',
+                //     component:Hi
+                // },
                 {
-                    path:'/',
-                    name:'Hello/Hi',
-                    component:Hi
-                },
-                {
-                    path:'Hi1',
+                    path:'hi1',
                     name:'hi1',
                     component:Hi1
                 },
