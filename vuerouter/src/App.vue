@@ -18,7 +18,7 @@
       <router-link to="/lj">alias lj</router-link> |
       <router-link to="/404">我是瞎写的</router-link> |
     </div>
-    <transition name="fade" mode="out-in">
+    <transition name="fade" mode="in-out">
       <router-view></router-view>
     </transition>
 

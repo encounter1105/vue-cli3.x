@@ -23,12 +23,13 @@ export default new Router({
         {
             path:'/params/:newsId(\\d+)/:newsTitle',
             component:Params,
-            // beforeEnter:(to,from,next)=>{
-            //     console.log(to);
-            //     console.log(from);
-            //     next({path:'/'});
-            // }
-        },
+            beforeEnter:(to,from,next)=>{
+                console.log(to);
+                console.log(from);
+                next({path:'/'});
+            }
+            },
+        // },
         {
             path:'/goHome',
             redirect:'/'
